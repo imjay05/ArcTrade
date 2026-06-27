@@ -217,8 +217,10 @@ Honest notes on current limitations and what I'd build next — because knowing 
 
 ## 👤 Author
 
-**[Jay]**
-[LinkedIn](#https://www.linkedin.com/in/jay-shelke-4323a22a5/) • [GitHub](#https://github.com/imjay05) 
+**Jay**
+
+- LinkedIn: [Jay Shelke](https://www.linkedin.com/in/jay-shelke-4323a22a5/)
+- GitHub: [imjay05](https://github.com/imjay05)
 
 ---
 
