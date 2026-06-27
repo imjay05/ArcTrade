@@ -2,7 +2,7 @@
 
 # 📈 ArcTrade
 
-### A full-stack stock trading simulator with real-money-style wallet logic, live market data, and bank-grade payment verification.
+### A full-stack stock trading platform with live market data.
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-16a34a?style=for-the-badge)](#)
 [![Frontend](https://img.shields.io/badge/Frontend-React%2019-149eca?style=for-the-badge&logo=react)](#)
@@ -105,8 +105,7 @@ Users can sign up, fund a virtual wallet through a real Razorpay checkout, brows
 | **Auth** | JWT (`jsonwebtoken`), `bcryptjs` |
 | **Payments** | Razorpay Checkout + Orders API, Node `crypto` (HMAC verification) |
 | **Market Data** | Yahoo Finance (unofficial endpoint via Axios) |
-| **Deployment** | Vercel (frontend, CI/CD on push to `main`), Render (backend, CI/CD on push to `main`) |
-| **Tooling** | Git, GitHub, ESLint |
+| **Tooling** | Git, GitHub|
 
 ---
 
