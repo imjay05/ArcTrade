@@ -1,0 +1,43 @@
+.holdings-summary-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin-top: 5%;
+  gap: 16px;
+}
+
+.holdings-col { 
+    flex: 1; 
+}
+
+.holdings-col h5 {
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.holdings-col h5 span { 
+    font-size: 0.9rem; 
+}
+
+.holdings-col p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.holdings-cell-profit { 
+    font-weight: 600; 
+    color: #16a34a; 
+}
+
+.holdings-cell-loss { 
+    font-weight: 600; 
+    color: #C62828; 
+}
+
+.holdings-empty {
+  text-align: center;
+  padding: 30px;
+  color: #aaa;
+}

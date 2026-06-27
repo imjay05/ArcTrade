@@ -1,0 +1,15 @@
+export const C = {
+  crimson: "#C62828",
+  crimsonLight: "#FDECEA",
+  green: "#16a34a",
+  greenLight: "rgb(220, 252, 231)",
+  bgWhite: "#FFFFFF",
+  bgSubtle: "#F8F9FC",
+  border: "#E8E9EF",
+  borderMid: "#D0D3E0",
+  textPrimary: "#0D1035",
+  textSecondary: "#4A4E6B",
+  textMuted: "#9094B0",
+  profit: "#16a34a",
+  loss: "#C62828",
+};

@@ -1,0 +1,154 @@
+.dc-container { padding: 24px 0 48px; }
+
+.dc-title { font-size: 1.1rem; font-weight: 800; color: #0d1117; margin: 0 0 4px; }
+.dc-subtitle { font-size: 0.82rem; color: #9ca3af; margin: 0 0 20px; }
+
+.dc-chart-wrap {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px 20px 16px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.dc-chart { display: flex; align-items: stretch; gap: 6px; min-width: 560px; }
+
+.dc-bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 2px 1px;
+  transition: background 0.15s;
+  min-width: 64px;
+}
+
+.dc-bar-col:hover { background: #f0fdf4; }
+.dc-bar-col--selected { background: #f0fdf4; outline: 2px solid #16a34a; }
+.dc-bar-col--empty:hover { background: #f9fafb; }
+.dc-bar-col--empty.dc-bar-col--selected { background: #f9fafb; outline: 2px solid #d1d5db; }
+
+.dc-half--top { height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+.dc-half--bottom { height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+.dc-bar-spacer { flex: 1; }
+
+.dc-zero-tick { width: 100%; height: 2px; background: #d1d5db; flex-shrink: 0; }
+
+.dc-bar { width: 34px; transition: height 0.4s ease; border-radius: 4px; }
+.dc-bar--profit { background: linear-gradient(180deg, #4ade80, #16a34a); border-radius: 4px 4px 0 0; }
+.dc-bar--loss { background: linear-gradient(180deg, #ef4444, #dc2626); border-radius: 0 0 4px 4px; }
+.dc-bar--empty { background: #e5e7eb; border-radius: 0 0 4px 4px; }
+
+.dc-pct { font-size: 0.62rem; font-weight: 700; white-space: nowrap; line-height: 1; }
+.dc-pct--profit { color: #16a34a; margin-bottom: 3px; }
+.dc-pct--loss { color: #dc2626; margin-top: 3px; }
+
+.dc-bar-meta { display: flex; flex-direction: column; align-items: center; gap: 2px; margin-top: 6px; }
+.dc-bar-name {
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: #374151;
+  text-align: center;
+  line-height: 1.3;
+  word-break: break-word;
+  max-width: 72px;
+}
+
+.dc-bar-col--empty .dc-bar-name { color: #9ca3af; }
+
+.dc-bar-sub { font-size: 0.6rem; }
+.dc-up { color: #16a34a; font-weight: 700; }
+.dc-dn { color: #ef4444; font-weight: 700; }
+.dc-none { color: #c4c9d4; font-weight: 500; }
+
+/* Table */
+.dc-table-wrap {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.dc-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dc-table-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0d1117;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dc-table-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  background: #f0fdf4;
+  color: #15803d;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.dc-table-badge--empty { background: #f3f4f6; color: #6b7280; }
+
+.dc-table-avg { font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+.dc-table-avg.dc-profit { background: #f0fdf4; color: #15803d; }
+.dc-table-avg.dc-loss { background: #fef2f2; color: #e63946; }
+
+.dc-table-close {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: #6b7280;
+  flex-shrink: 0;
+  transition: background 0.12s;
+}
+.dc-table-close:hover { background: #e5e7eb; }
+
+.dc-empty-msg {
+  padding: 20px 20px;
+  font-size: 0.82rem;
+  color: #9ca3af;
+}
+
+.dc-table-scroll { overflow-x: auto; }
+.dc-table { width: 100%; border-collapse: collapse; min-width: 400px; }
+.dc-table thead { background: #f9fafb; }
+
+.dc-table th {
+  padding: 8px 16px;
+  font-size: 0.72rem;
+  color: #9ca3af;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.dc-table td { padding: 10px 16px; font-size: 0.85rem; border-top: 1px solid #f3f4f6; color: #374151; }
+.dc-table tbody tr:hover { background: #f9fafb; }
+
+.dc-td-sym { font-weight: 700; color: #0d1117; }
+.dc-td-price { font-variant-numeric: tabular-nums; }
+.dc-td-chg { font-weight: 600; }
+
+.dc-profit { color: #15803d; }
+.dc-loss { color: #e63946; }

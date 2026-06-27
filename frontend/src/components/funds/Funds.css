@@ -1,0 +1,89 @@
+.funds-header {
+  width: 100%;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.funds-header p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.funds-amount-row {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.funds-amount-input {
+  padding: 10px 14px;
+  border: 1px solid #dde1e7;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  width: 200px;
+  outline: none;
+}
+
+.funds-amount-input:focus {
+  border-color: var(--brand-navy);
+  box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.10);
+}
+
+.funds-quick-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.funds-quick-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.funds-quick-btn.active {
+  background: var(--brand-navy);  
+  color: #fff;
+}
+
+.funds-quick-btn.inactive {
+  background: #f1f3f5;
+  color: #555;
+}
+
+.funds-wallet-card {
+  background: linear-gradient(120deg, #eef1ff 0%, #e4eaff 100%);
+  border: 1px solid rgba(26, 35, 126, 0.15);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.funds-wallet-label {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.funds-wallet-balance {
+  margin: 4px 0 0;
+  color: var(--brand-navy);       
+  font-weight: 700;
+}
+
+.funds-wallet-icon {
+  font-size: 1.8rem;
+}

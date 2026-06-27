@@ -1,0 +1,132 @@
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.orders-refresh-btn {
+  padding: 6px 14px;
+  background: #f1f3f5;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  color: #555;
+  transition: background 0.15s;
+}
+.orders-refresh-btn:hover { background: #e2e5e9; }
+
+.orders-summary-cards { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+
+.orders-summary-card {
+  background: linear-gradient(135deg, #f0fdf4 0%, #f8f9fd 100%);
+  border: 1px solid rgba(22, 163, 74, 0.10);
+  border-radius: 8px;
+  padding: 10px 16px;
+  min-width: 100px;
+}
+
+.orders-summary-card-label {
+  margin: 0;
+  font-size: 0.65rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.orders-summary-card-value { 
+    margin: 4px 0 0; 
+    font-weight: 700; 
+    font-size: 1rem; 
+}
+
+.orders-pnl-bar {
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin-bottom: 16px;
+  font-size: 0.72rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orders-pnl-bar.profit {
+  background: linear-gradient(90deg, #DCFCE7 0%, #d3f5dd 100%);
+  border: 1px solid rgba(22, 163, 74, 0.15);
+  color: #0d6b32;
+}
+
+.orders-pnl-bar.loss {
+  background: linear-gradient(90deg, #FDECEA 0%, #fde0dd 100%);
+  border: 1px solid rgba(198, 40, 40, 0.15);
+  color: #8B0000;
+}
+
+.orders-pnl-bar-net { 
+    font-weight: 700; 
+}
+
+.order-type-badge { 
+    padding: 2px 8px; 
+    border-radius: 4px; 
+    font-size: 0.75rem; 
+    font-weight: 700; 
+}
+
+.order-type-badge.buy { 
+    background: #DCFCE7; 
+    color: #16a34a; 
+}
+
+.order-type-badge.sell { 
+    background: var(--brand-crimson-light); 
+    color: var(--brand-crimson-dark); 
+}
+
+.order-status-badge { 
+    padding: 2px 8px; 
+    border-radius: 4px; 
+    font-size: 0.72rem; 
+    font-weight: 600; 
+}
+
+.order-status-badge.complete  { 
+    background: #e8f5e9; 
+    color: #1b5e20; 
+}
+
+.order-status-badge.pending { 
+    background: #fff8e1; 
+    color: #e65100; 
+}
+
+.order-status-badge.rejected { 
+    background: var(--brand-crimson-light); 
+    color: var(--brand-crimson-dark); 
+}
+
+.order-status-badge.cancelled{ 
+    background: #f5f5f5; 
+    color: #757575; 
+}
+
+.order-total-buy  { 
+    font-weight: 600; 
+    color: var(--brand-crimson); 
+}
+
+.order-total-sell { 
+    font-weight: 600; 
+    color: #16a34a; 
+}
+
+.order-time-cell { 
+    font-size: 0.72rem; 
+    color: #aaa; 
+}
+
+.order-category-cell { 
+    font-size: 0.72rem; 
+    color: #888; 
+}

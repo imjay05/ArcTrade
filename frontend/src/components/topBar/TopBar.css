@@ -1,0 +1,25 @@
+.topbar-container {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-white);
+  box-shadow: 0 1px 0 var(--border-light);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .topbar-container { height: 52px; }
+  .topbar-menu { width: 100%; flex: 1; }
+}

@@ -1,0 +1,159 @@
+.watchlist-container {
+  width: 320px;
+  flex-shrink: 0;
+  height: calc(100vh - 56px);
+  background: var(--bg-white);
+  box-shadow: 1px 0 0 var(--border-light);
+  overflow: hidden;
+  position: sticky;
+  top: 56px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wl-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-light);
+  background: #f9fafb;
+  flex-shrink: 0;
+}
+
+.wl-search-icon { font-size: 0.75rem; color: #9ca3af; }
+.wl-search { flex: 1; border: none; background: transparent; font-size: 0.8rem; outline: none; color: #111827; }
+.wl-search::placeholder { color: #c4c9d4; }
+.wl-search-clear { background: none; border: none; color: #9ca3af; cursor: pointer; font-size: 0.7rem; padding: 2px 4px; line-height: 1; }
+.wl-search-clear:hover { color: #ef4444; }
+
+.list-scroll { flex: 1; overflow-y: auto; overflow-x: hidden; }
+
+.list { list-style: none; padding: 0; margin: 0; }
+.list li { border-bottom: 1px solid var(--border-light); padding: 10px 14px; position: relative; transition: background 0.12s; }
+.list li:hover { background: var(--bg-subtle); cursor: pointer; }
+
+.wl-empty { padding: 16px 14px; font-size: 0.78rem; color: #9ca3af; text-align: center; }
+
+.domain-list { list-style: none; padding: 0; margin: 0; }
+.domain-item { border-bottom: 1px solid var(--border-light); }
+.domain-header { padding: 10px 14px 8px; cursor: pointer; transition: background 0.12s; }
+.domain-header:hover { background: var(--bg-subtle); }
+
+.domain-header-top { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+.domain-name { font-size: 0.78rem; font-weight: 700; color: #1e293b; flex: 1; }
+.domain-count { font-size: 0.66rem; color: #94a3b8; }
+.domain-chevron { font-size: 0.8rem; color: #94a3b8; transition: transform 0.2s; display: inline-block; }
+.domain-chevron.open { transform: rotate(180deg); }
+
+.domain-sentiment-bar { display: flex; height: 4px; border-radius: 4px; overflow: hidden; background: #e5e7eb; margin-bottom: 4px; }
+.dsb-up { background: #16a34a; height: 100%; transition: width 0.4s ease; }
+.dsb-down { background: #ef4444; height: 100%; transition: width 0.4s ease; }
+
+.domain-sentiment-labels { display: flex; justify-content: space-between; font-size: 0.6rem; }
+.dsl-up { color: #16a34a; font-weight: 600; }
+.dsl-down { color: #ef4444; font-weight: 600; }
+
+.domain-stocks { list-style: none; padding: 0; margin: 0; background: #f7fdf9; border-top: 1px solid #e8f4ec; }
+.domain-stocks li { border-bottom: 1px solid #edf6ef; padding: 8px 14px 8px 20px; position: relative; transition: background 0.12s; }
+.domain-stocks li:hover { background: #effaf1; cursor: pointer; }
+
+.item { display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; }
+.item-name-wrap { display: flex; align-items: center; gap: 5px; }
+.item-right { display: flex; align-items: center; gap: 6px; }
+.itemInfo { display: flex; align-items: center; gap: 4px; }
+
+.watchlist-item { position: relative; }
+
+.actions {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  background: linear-gradient(90deg, transparent 20%, rgba(248, 249, 252, 0.97) 50%);
+  padding-right: 12px;
+}
+
+.list li:hover > .actions,
+.domain-stocks li:hover > .actions { display: flex; }
+
+.actions span { display: flex; gap: 6px; }
+
+.actions span button {
+  width: 40px;
+  height: 28px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.actions span button:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.buy  { background: var(--btn-buy);  color: #fff; }
+.sell { background: var(--btn-sell); color: #fff; }
+.buy:hover  { background: var(--btn-buy-hover)  !important; }
+.sell:hover { background: var(--btn-sell-hover) !important; }
+
+.actions .analytics {
+  background: transparent;
+  border: 1px solid #16a34a;
+  color: #16a34a;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1.4;
+  width: auto !important;
+}
+
+.actions .analytics:hover { background: #16a34a; color: #fff; }
+
+.item-skeleton { 
+  display: flex; 
+  gap: 6px; 
+  align-items: center; 
+}
+
+.skeleton-pill {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  display: inline-block;
+}
+
+@keyframes shimmer { 
+  0% { 
+    background-position: 200% 0; 
+  } 
+  100% { 
+    background-position: -200% 0; 
+  } 
+}
+
+@media (max-width: 768px) {
+  .watchlist-container {
+    width: 100%;
+    height: calc(100vh - 56px);  
+    position: relative;
+    top: 0;
+    flex-shrink: 0;
+  }
+
+  .list-scroll {
+    max-height: unset;  
+    flex: 1;
+  }
+}
