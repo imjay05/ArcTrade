@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📈 ArcTrade
+# ArcTrade
 
 ### A full-stack stock trading platform with live market data.
 
