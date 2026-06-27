@@ -70,17 +70,17 @@ Users can sign up, fund a virtual wallet through a real Razorpay checkout, brows
 
 ```
 ┌──────────────────┐        HTTPS / JWT Bearer        ┌───────────────────┐
-│   React + Vite    │ ───────────────────────────────▶ │  Node.js + Express │
-│   (Frontend)       │ ◀─────────────────────────────  │     (Backend)      │
-└──────────────────┘            JSON REST API          └───────────────────┘
+│   React + Vite   │ ───────────────────────────────▶│  Node.js + Express │
+│   (Frontend)     │ ◀─────────────────────────────  │     (Backend)      │
+└──────────────────┘            JSON REST API         └───────────────────┘
                                                               │      │
                                                               │      │
                                           ┌───────────────────┘      └───────────────────┐
                                           ▼                                              ▼
                               ┌───────────────────────┐                    ┌─────────────────────┐
-                              │   MongoDB + Mongoose    │                    │   External Services   │
-                              │  Users · Orders ·       │                    │  • Razorpay (payments) │
-                              │  Holdings · Payments     │                    │  • Yahoo Finance (quotes)│
+                              │   MongoDB + Mongoose  │                    │External Services    │
+                              │  Users · Orders ·     │                    │ • Razorpay(payments)│
+                              │  Holdings · Payments  │                    │ • Yahoo Finance     │
                               └───────────────────────┘                    └─────────────────────┘
 ```
 
@@ -184,20 +184,20 @@ App runs at `http://localhost:5173`, API at `http://localhost:3002`.
 
 ## 📡 API Reference
 
-| Method | Endpoint | Description | Auth |
-|---|---|---|---|
-| `POST` | `/api/auth/signup` | Create account | ❌ |
-| `POST` | `/api/auth/login` | Login, returns JWT | ❌ |
-| `GET`  | `/api/auth/me` | Get current user | ✅ |
-| `POST` | `/api/auth/logout` | Logout | ✅ |
-| `POST` | `/api/orders/new` | Place a BUY/SELL order (transactional) | ✅ |
-| `GET`  | `/api/orders` | Get order history | ✅ |
-| `GET`  | `/api/holdings` | Get current holdings | ✅ |
-| `GET`  | `/api/stock-prices?symbols=` | Get live quotes (sequential, cached) | ❌ |
-| `GET`  | `/api/stock-prices/bulk?symbols=` | Get live quotes (parallel batched) | ❌ |
-| `GET`  | `/api/stock-analyzer` | Holdings tagged by sector | ✅ |
-| `POST` | `/api/payment/create-order` | Create a Razorpay order | ✅ |
-| `POST` | `/api/payment/verify` | Verify payment signature & credit wallet | ✅ |
+| Method |              Endpoint             |            Description                   | Auth |
+|--------|-----------------------------------|------------------------------------------|----- |
+| `POST` | `/api/auth/signup`                | Create account                           | ❌  |
+| `POST` | `/api/auth/login`                 | Login, returns JWT                       | ❌  |
+| `GET`  | `/api/auth/me`                    | Get current user                         | ✅  |
+| `POST` | `/api/auth/logout`                | Logout                                   | ✅  |
+| `POST` | `/api/orders/new`                 | Place a BUY/SELL order (transactional)   | ✅  |
+| `GET`  | `/api/orders`                     | Get order history                        | ✅  |
+| `GET`  | `/api/holdings`                   | Get current holdings                     | ✅  |
+| `GET`  | `/api/stock-prices?symbols=`      | Get live quotes (sequential, cached)     | ❌  |
+| `GET`  | `/api/stock-prices/bulk?symbols=` | Get live quotes (parallel batched)       | ❌  |
+| `GET`  | `/api/stock-analyzer`             | Holdings tagged by sector                | ✅  |
+| `POST` | `/api/payment/create-order`       | Create a Razorpay order                  | ✅  |
+| `POST` | `/api/payment/verify`             | Verify payment signature & credit wallet | ✅  |
 
 All responses follow a consistent shape: `{ success: boolean, message?: string, data? }`.
 
@@ -218,7 +218,7 @@ Honest notes on current limitations and what I'd build next — because knowing 
 ## 👤 Author
 
 **[Jay]**
-[LinkedIn](#) • [GitHub](#) • [Portfolio](#)
+[LinkedIn](#https://www.linkedin.com/in/jay-shelke-4323a22a5/) • [GitHub](#https://github.com/imjay05) 
 
 ---
 
