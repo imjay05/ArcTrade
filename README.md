@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📈 ArcTrade
+# ArcTrade
 
 ### A full-stack stock trading simulator with real-money-style wallet logic, live market data, and bank-grade payment verification.
 
