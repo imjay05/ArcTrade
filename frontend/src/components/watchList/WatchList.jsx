@@ -10,6 +10,7 @@ const WatchList = () => {
 
   const [openDomain, setOpenDomain] = useState(null);
   const [query, setQuery] = useState("");
+  const [viewMode, setViewMode] = useState("flat"); // "flat" | "domain"
 
   const enrich = (sym) => {
     const live = prices[sym];
@@ -43,6 +44,10 @@ const WatchList = () => {
     return allSymbols.filter((s) => s.includes(q)).map(enrich);
   }, [query, allSymbols, prices]);
 
+  const flatList = useMemo(() => {
+    return [...allSymbols].sort().map(enrich);
+  }, [allSymbols, prices]);
+
   const isSearching = query.trim().length > 0;
 
   return (
@@ -60,6 +65,21 @@ const WatchList = () => {
         {query && <button className="wl-search-clear" onClick={() => setQuery("")}>✕</button>}
       </div>
 
+      {!isSearching && (
+        <div className="wl-view-toggle">
+          <button
+            className={viewMode === "flat" ? "active" : ""}
+            onClick={() => setViewMode("flat")}>
+            All Stocks
+          </button>
+          <button
+            className={viewMode === "domain" ? "active" : ""}
+            onClick={() => setViewMode("domain")}>
+            By Domain
+          </button>
+        </div>
+      )}
+
       <div className="list-scroll">
         {isSearching ? (
           <ul className="list">
@@ -69,6 +89,12 @@ const WatchList = () => {
                   <WatchListItem key={i} stock={stock} />
                 ))
             }
+          </ul>
+        ) : viewMode === "flat" ? (
+          <ul className="list">
+            {flatList.map((stock, i) => (
+              <WatchListItem key={i} stock={stock} />
+            ))}
           </ul>
         ) : (
           <ul className="domain-list">
