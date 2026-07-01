@@ -4,7 +4,7 @@
 
 # ArcTrade
 
-### A full-stack stock trading platform with live market data.
+### A full-stack stock trading platform.
 
 > Full-stack MERN trading simulator with transactional order execution, Razorpay payment verification, and a live NSE market data pipeline.
 
