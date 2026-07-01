@@ -31,8 +31,7 @@ Users can sign up, fund a virtual wallet through a real Razorpay checkout, brows
 
 | | |
 |---|---|
-| **Frontend** | [arctrade-stocks.vercel.app](https://arctrade-stocks.vercel.app/) |
-| **Backend API** | [your-render-link-here](#) |
+| **Live** | [arctrade-stocks.vercel.app](https://arctrade-stocks.vercel.app/) |
 | **Demo Credentials** | `demo@arctrade.com` / `demo1234` *(or "Sign up to test live")* |
 
 ---
