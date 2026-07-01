@@ -1,10 +1,14 @@
 <div align="center">
 
+<img src="frontend/public/logo.png" alt="ArcTrade Logo" width="120" />
+
 # ArcTrade
 
 ### A full-stack stock trading platform with live market data.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-16a34a?style=for-the-badge)](#)
+> Full-stack MERN trading simulator with transactional order execution, Razorpay payment verification, and a live NSE market data pipeline.
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-16a34a?style=for-the-badge)](https://arctrade-stocks.vercel.app/)
 [![Frontend](https://img.shields.io/badge/Frontend-React%2019-149eca?style=for-the-badge&logo=react)](#)
 [![Backend](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-339933?style=for-the-badge&logo=node.js)](#)
 [![Database](https://img.shields.io/badge/Database-MongoDB-47A248?style=for-the-badge&logo=mongodb)](#)
@@ -27,7 +31,7 @@ Users can sign up, fund a virtual wallet through a real Razorpay checkout, brows
 
 | | |
 |---|---|
-| **Frontend** | [your-vercel-link-here](#) |
+| **Frontend** | [arctrade-stocks.vercel.app](https://arctrade-stocks.vercel.app/) |
 | **Backend API** | [your-render-link-here](#) |
 | **Demo Credentials** | `demo@arctrade.com` / `demo1234` *(or "Sign up to test live")* |
 
@@ -124,6 +128,7 @@ arctrade/
 │   └── Index.js                    # Express app entrypoint
 │
 └── frontend/
+    ├── public/logo.png             # App logo
     ├── src/
     │   ├── auth/                   # Login, Signup
     │   ├── components/
