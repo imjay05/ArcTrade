@@ -24,10 +24,22 @@
   border-top-right-radius: var(--radius);
 }
 
-.header h3 { color: #fff; font-size: 1rem; font-weight: 500; margin-bottom: 6px; }
-.header h3 span { font-size: 0.6rem; }
+.header h3 { 
+  color: #fff; 
+  font-size: 1rem; 
+  font-weight: 500; 
+  margin-bottom: 6px; 
+}
 
-.buy-sell-toggle { display: flex; gap: 8px; margin-bottom: 6px; }
+.header h3 span { 
+  font-size: 0.6rem; 
+}
+
+.buy-sell-toggle { 
+  display: flex; 
+  gap: 8px; 
+  margin-bottom: 6px;
+}
 
 .buy-sell-toggle button {
   padding: 4px 14px;
@@ -39,11 +51,27 @@
   transition: background 0.15s, color 0.15s;
 }
 
-.buy-sell-toggle .active-buy { background: #fff; color: #16a34a; }
-.buy-sell-toggle .inactive   { background: rgba(255, 255, 255, 0.25); color: #fff; }
-.buy-sell-toggle .active-sell { background: #fff; color: #C62828; }
+.buy-sell-toggle .active-buy { 
+  background: #fff; 
+  color: #16a34a; 
+}
 
-.market-options { font-weight: 300; color: #fff; font-size: 0.8rem; }
+.buy-sell-toggle .inactive { 
+  background: rgba(255, 255, 255, 0.25); 
+  color: #fff; 
+}
+
+.buy-sell-toggle .active-sell { 
+  background: #fff; 
+  color: #C62828; 
+}
+
+.market-options { 
+  font-weight: 300; 
+  color: #fff; 
+  font-size: 0.8rem; 
+}
+
 .market-options label { margin-right: 6px; cursor: pointer; }
 .market-options input[type="radio"] { border: 1px solid #ddd; cursor: pointer; padding: 2px; margin-right: 6px; }
 
@@ -156,4 +184,8 @@
   border: none;
   font-size: 0.85rem;
 }
-.btn-grey:hover { background: #9b9b9b; color: #fff; }
+
+.btn-grey:hover { 
+  background: #9b9b9b; 
+  color: #fff; 
+}
