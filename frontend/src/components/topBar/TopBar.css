@@ -20,6 +20,11 @@
 }
 
 @media (max-width: 768px) {
-  .topbar-container { height: 52px; }
-  .topbar-menu { width: 100%; flex: 1; }
+  .topbar-container { 
+    height: 52px; 
+  }
+  .topbar-menu { 
+    width: 100%; 
+    flex: 1; 
+  }
 }
