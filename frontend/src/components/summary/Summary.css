@@ -1,6 +1,14 @@
-.summary-greeting { font-size: 0.88rem; font-weight: 700; margin: 0 0 10px; }
+.summary-greeting { 
+  font-size: 0.88rem; 
+  font-weight: 700; 
+  margin: 0 0 10px; 
+}
 
-.summary-divider { border: none; border-top: 1px solid var(--border-light); margin: 14px 0; }
+.summary-divider { 
+  border: none; 
+  border-top: 1px solid var(--border-light); 
+  margin: 14px 0; 
+}
 
 .summary-section-label {
   font-size: 0.66rem;
@@ -11,7 +19,13 @@
   margin: 0 0 10px;
 }
 
-.summary-pnl-block { display: flex; align-items: center; gap: 18px; padding: 10px 14px; border-radius: 8px; }
+.summary-pnl-block { 
+  display: flex; 
+  align-items: center; 
+  gap: 18px; 
+  padding: 10px 14px; 
+  border-radius: 8px; 
+}
 
 .summary-pnl-block.profit {
   background: linear-gradient(120deg, #DCFCE7 0%, #cdf5d8 100%);
@@ -23,14 +37,39 @@
   border: 1px solid rgba(198, 40, 40, 0.16);
 }
 
-.summary-pnl-amount { font-size: 1.45rem; font-weight: 600; margin: 0 0 2px; }
-.summary-pnl-amount small { font-size: 0.66rem; font-weight: 500; opacity: 0.8; }
-.summary-pnl-label { font-size: 0.65rem; color: var(--text-muted); margin: 0; }
+.summary-pnl-amount { 
+  font-size: 1.45rem; 
+  font-weight: 600; 
+  margin: 0 0 2px; 
+}
 
-.summary-pnl-divider { width: 1px; height: 40px; background: var(--border-mid); }
+.summary-pnl-amount small { 
+  font-size: 0.66rem; 
+  font-weight: 500; 
+  opacity: 0.8; 
+}
 
-.summary-pnl-meta p { font-size: 0.65rem; color: var(--text-muted); margin: 0 0 4px; }
-.summary-pnl-meta span { font-weight: 600; }
+.summary-pnl-label { 
+  font-size: 0.65rem; 
+  color: var(--text-muted); 
+  margin: 0; 
+}
+
+.summary-pnl-divider { 
+  width: 1px; 
+  height: 40px; 
+  background: var(--border-mid); 
+}
+
+.summary-pnl-meta p { 
+  font-size: 0.65rem; 
+  color: var(--text-muted); 
+  margin: 0 0 4px;
+}
+
+.summary-pnl-meta span { 
+  font-weight: 600; 
+}
 
 .summary-equity-block {
   display: flex;
@@ -43,7 +82,21 @@
   border-radius: 8px;
 }
 
-.summary-equity-amount { font-size: 1.45rem; font-weight: 600; margin: 0 0 2px; color: #0d6b32; }
-.summary-equity-label { font-size: 0.65rem; color: var(--text-muted); margin: 0; }
+.summary-equity-amount { 
+  font-size: 1.45rem; 
+  font-weight: 600; 
+  margin: 0 0 2px; 
+  color: #0d6b32; 
+}
 
-.summary-muted { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
+.summary-equity-label { 
+  font-size: 0.65rem; 
+  color: var(--text-muted); 
+  margin: 0; 
+}
+
+.summary-muted { 
+  font-size: 0.75rem; 
+  color: var(--text-muted); 
+  margin: 0; 
+}
