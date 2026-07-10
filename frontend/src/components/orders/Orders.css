@@ -15,9 +15,17 @@
   color: #555;
   transition: background 0.15s;
 }
-.orders-refresh-btn:hover { background: #e2e5e9; }
 
-.orders-summary-cards { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.orders-refresh-btn:hover { 
+    background: #e2e5e9; 
+}
+
+.orders-summary-cards { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+    flex-wrap: wrap; 
+}
 
 .orders-summary-card {
   background: linear-gradient(135deg, #f0fdf4 0%, #f8f9fd 100%);
