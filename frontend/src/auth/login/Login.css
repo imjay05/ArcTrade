@@ -253,12 +253,33 @@
   box-shadow: 0 6px 18px rgba(198,40,40,0.32);
 }
 
-.lf-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.lf-submit:disabled { 
+  opacity: 0.6; 
+  cursor: not-allowed; 
+}
 
-.lf-spinner { width: 16px; height: 16px; border: 2.5px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
+.lf-spinner { 
+  width: 16px; 
+  height: 16px; 
+  border: 2.5px solid rgba(255,255,255,0.3); 
+  border-top-color: #fff; 
+  border-radius: 50%; 
+  animation: spin 0.7s linear infinite; 
+}
 
-.login-legal { font-size: 0.74rem; color: var(--text-sub); line-height: 1.6; text-align: center; }
+@keyframes spin { 
+  to { 
+    transform: rotate(360deg); 
+  } 
+}
+
+.login-legal { 
+  font-size: 0.74rem; 
+  color: var(--text-sub); 
+  line-height: 1.6; 
+  text-align: center; 
+}
+
 .login-legal a { color: #16a34a; font-weight: 500; text-decoration: none; }
 .login-legal a:hover { color: #0d6b32; }
 
