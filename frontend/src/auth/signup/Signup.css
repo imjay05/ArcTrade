@@ -1,10 +1,38 @@
-.signup-page { display: flex; min-height: 100vh; font-family: var(--font-body); }
+.signup-page { 
+  display: flex; 
+  min-height: 100vh; 
+  font-family: var(--font-body); 
+}
 
-.signup-panel--left { flex: 1; background: var(--white); display: flex; align-items: center; justify-content: center; padding: 44px 40px; }
-.signup-form-wrap { width: 100%; max-width: 420px; }
+.signup-panel--left { 
+  flex: 1; 
+  background: var(--white); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 44px 40px; 
+}
 
-.signup-mobile-brand { display: none; align-items: center; gap: 8px; margin-bottom: 28px; }
-.signup-mobile-brand img { width: 36px; height: 36px; object-fit: contain; display: block; flex-shrink: 0; }
+.signup-form-wrap { 
+  width: 100%; 
+  max-width: 420px; 
+}
+
+.signup-mobile-brand { 
+  display: none; 
+  align-items: center; 
+  gap: 8px; 
+  margin-bottom: 28px; 
+}
+
+.signup-mobile-brand img { 
+  width: 36px; 
+  height: 36px; 
+  object-fit: contain; 
+  display: block; 
+  flex-shrink: 0; 
+}
+
 .signup-mobile-brand span {
   font-family: var(--font-display);
   font-size: 1.75rem;
