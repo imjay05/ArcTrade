@@ -148,17 +148,62 @@
   margin-bottom: 6px; 
 }
 
-.login-form-sub { font-size: 0.87rem; color: var(--text-muted); }
-.login-form-link { color: var(--brand-crimson); font-weight: 600; text-decoration: none; transition: color var(--t-fast); }
-.login-form-link:hover { color: var(--brand-crimson-dark); }
+.login-form-sub { 
+  font-size: 0.87rem; 
+  color: var(--text-muted); 
+}
 
-.login-form { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
-.lf-field { display: flex; flex-direction: column; gap: 6px; }
-.lf-field label { font-family: var(--font-display); font-size: 0.8rem; font-weight: 600; color: var(--text); }
-.lf-label-row { display: flex; align-items: center; justify-content: space-between; }
+.login-form-link { 
+  color: var(--brand-crimson); 
+  font-weight: 600; 
+  text-decoration: none; 
+  transition: color var(--t-fast); 
+}
 
-.lf-input-wrap { position: relative; display: flex; align-items: center; }
-.lf-icon { position: absolute; left: 13px; color: #9ca3af; display: flex; align-items: center; pointer-events: none; }
+.login-form-link:hover { 
+  color: var(--brand-crimson-dark); 
+}
+
+.login-form { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 16px; 
+  margin-bottom: 20px; 
+}
+
+.lf-field { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 6px; 
+}
+
+.lf-field label { 
+  font-family: var(--font-display); 
+  font-size: 0.8rem; 
+  font-weight: 600; 
+  color: var(--text); 
+}
+
+.lf-label-row { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+.lf-input-wrap { 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+}
+
+.lf-icon { 
+  position: absolute; 
+  left: 13px; 
+  color: #9ca3af; 
+  display: flex; 
+  align-items: center; 
+  pointer-events: none; 
+}
 
 .lf-input-wrap input {
   width: 100%;
