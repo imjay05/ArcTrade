@@ -41,9 +41,24 @@
   line-height: 36px; 
 }
 
-.signup-form-header { margin-bottom: 24px; }
-.signup-form-title { font-family: var(--font-display); font-size: 1.55rem; font-weight: 800; color: var(--text); letter-spacing: -0.025em; margin-bottom: 6px; }
-.signup-form-sub { font-size: 0.87rem; color: var(--text-muted); }
+.signup-form-header { 
+  margin-bottom: 24px; 
+}
+
+.signup-form-title { 
+  font-family: var(--font-display); 
+  font-size: 1.55rem; 
+  font-weight: 800; 
+  color: var(--text); 
+  letter-spacing: -0.025em; 
+  margin-bottom: 6px; 
+}
+
+.signup-form-sub { 
+  font-size: 0.87rem; 
+  color: var(--text-muted); 
+}
+
 .signup-form-link { color: var(--brand-crimson); font-weight: 600; text-decoration: none; transition: color var(--t-fast); }
 .signup-form-link:hover { color: var(--brand-crimson-dark); }
 
