@@ -90,8 +90,21 @@
   color: var(--text); 
 }
 
-.sf-input-wrap { position: relative; display: flex; align-items: center; }
-.sf-icon { position: absolute; left: 13px; color: #9ca3af; display: flex; align-items: center; pointer-events: none; z-index: 1; }
+.sf-input-wrap { 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+}
+
+.sf-icon { 
+  position: absolute; 
+  left: 13px; 
+  color: #9ca3af; 
+  display: flex; 
+  align-items: center; 
+  pointer-events: none; 
+  z-index: 1; 
+}
 
 .sf-input-wrap input {
   width: 100%;
