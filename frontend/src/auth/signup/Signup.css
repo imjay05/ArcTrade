@@ -77,8 +77,18 @@
   margin-bottom: 18px; 
 }
 
-.sf-field { display: flex; flex-direction: column; gap: 6px; }
-.sf-field label { font-family: var(--font-display); font-size: 0.8rem; font-weight: 600; color: var(--text); }
+.sf-field { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 6px; 
+}
+
+.sf-field label { 
+  font-family: var(--font-display); 
+  font-size: 0.8rem; 
+  font-weight: 600; 
+  color: var(--text); 
+}
 
 .sf-input-wrap { position: relative; display: flex; align-items: center; }
 .sf-icon { position: absolute; left: 13px; color: #9ca3af; display: flex; align-items: center; pointer-events: none; z-index: 1; }
