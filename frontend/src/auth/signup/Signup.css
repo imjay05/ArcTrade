@@ -59,10 +59,24 @@
   color: var(--text-muted); 
 }
 
-.signup-form-link { color: var(--brand-crimson); font-weight: 600; text-decoration: none; transition: color var(--t-fast); }
-.signup-form-link:hover { color: var(--brand-crimson-dark); }
+.signup-form-link { 
+  color: var(--brand-crimson); 
+  font-weight: 600; 
+  text-decoration: none; 
+  transition: color var(--t-fast); 
+}
 
-.signup-form { display: flex; flex-direction: column; gap: 15px; margin-bottom: 18px; }
+.signup-form-link:hover { 
+  color: var(--brand-crimson-dark); 
+}
+
+.signup-form { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 15px; 
+  margin-bottom: 18px; 
+}
+
 .sf-field { display: flex; flex-direction: column; gap: 6px; }
 .sf-field label { font-family: var(--font-display); font-size: 0.8rem; font-weight: 600; color: var(--text); }
 
