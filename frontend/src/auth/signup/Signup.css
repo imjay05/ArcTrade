@@ -237,7 +237,12 @@
   text-align: center; 
 }
 
-.signup-legal a { color: #16a34a; font-weight: 500; text-decoration: none; }
+.signup-legal a { 
+  color: #16a34a; 
+  font-weight: 500; 
+  text-decoration: none; 
+}
+
 .signup-legal a:hover { color: #0d6b32; }
 
 .signup-panel--right {
