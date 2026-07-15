@@ -172,7 +172,14 @@
   text-align: right; 
 }
 
-.sf-alert { padding: 9px 13px; border-radius: var(--r-md); font-size: 0.84rem; font-weight: 500; line-height: 1.5; }
+.sf-alert { 
+  padding: 9px 13px; 
+  border-radius: var(--r-md); 
+  font-size: 0.84rem; 
+  font-weight: 500; 
+  line-height: 1.5; 
+}
+
 .sf-alert--error { background: var(--red-light); color: var(--red); border: 1px solid #fca5a5; }
 .sf-alert--success { background: var(--green-light); color: var(--green); border: 1px solid #86efac; }
 
