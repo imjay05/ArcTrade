@@ -243,7 +243,9 @@
   text-decoration: none; 
 }
 
-.signup-legal a:hover { color: #0d6b32; }
+.signup-legal a:hover { 
+  color: #0d6b32; 
+}
 
 .signup-panel--right {
   width: 42%;
@@ -273,8 +275,16 @@
   pointer-events: none;
 }
 
-.signup-panel__brand { margin-bottom: auto; }
-.signup-brand-link { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; }
+.signup-panel__brand { 
+  margin-bottom: auto; 
+}
+
+.signup-brand-link { 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 9px; 
+  text-decoration: none; 
+}
 
 .signup-brand-img-wrap {
   width: 34px; height: 34px;
