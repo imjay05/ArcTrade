@@ -180,8 +180,17 @@
   line-height: 1.5; 
 }
 
-.sf-alert--error { background: var(--red-light); color: var(--red); border: 1px solid #fca5a5; }
-.sf-alert--success { background: var(--green-light); color: var(--green); border: 1px solid #86efac; }
+.sf-alert--error { 
+  background: var(--red-light); 
+  color: var(--red); 
+  border: 1px solid #fca5a5; 
+}
+
+.sf-alert--success { 
+  background: var(--green-light); 
+  color: var(--green); 
+  border: 1px solid #86efac; 
+}
 
 .sf-submit {
   width: 100%;
@@ -208,7 +217,10 @@
   box-shadow: 0 6px 18px rgba(198,40,40,0.32);
 }
 
-.sf-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.sf-submit:disabled { 
+  opacity: 0.6; 
+  cursor: not-allowed; 
+}
 
 .sf-spinner {
   width: 16px; height: 16px;
