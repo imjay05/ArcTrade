@@ -230,7 +230,13 @@
   animation: spin 0.7s linear infinite;
 }
 
-.signup-legal { font-size: 0.74rem; color: var(--text-sub); line-height: 1.6; text-align: center; }
+.signup-legal { 
+  font-size: 0.74rem; 
+  color: var(--text-sub); 
+  line-height: 1.6; 
+  text-align: center; 
+}
+
 .signup-legal a { color: #16a34a; font-weight: 500; text-decoration: none; }
 .signup-legal a:hover { color: #0d6b32; }
 
