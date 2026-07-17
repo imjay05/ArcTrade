@@ -342,7 +342,11 @@
   gap: 11px; 
 }
 
-.signup-perk { display: flex; align-items: center; gap: 11px; }
+.signup-perk { 
+  display: flex; 
+  align-items: center; 
+  gap: 11px; 
+}
 
 .signup-perk__icon {
   width: 20px; height: 20px;
