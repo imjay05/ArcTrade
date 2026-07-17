@@ -336,7 +336,12 @@
   max-width: 300px; 
 }
 
-.signup-panel__perks { display: flex; flex-direction: column; gap: 11px; }
+.signup-panel__perks { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 11px; 
+}
+
 .signup-perk { display: flex; align-items: center; gap: 11px; }
 
 .signup-perk__icon {
