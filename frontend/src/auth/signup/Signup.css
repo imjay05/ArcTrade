@@ -359,7 +359,10 @@
   color: #4ade80;
 }
 
-.signup-perk:nth-child(even) .signup-perk__icon { background: rgba(198,40,40,0.18); color: #f87171; }
+.signup-perk:nth-child(even) .signup-perk__icon { 
+  background: rgba(198,40,40,0.18); 
+  color: #f87171; 
+}
 
 .signup-perk__text { font-size: 0.86rem; font-weight: 500; color: #94a3b8; }
 
