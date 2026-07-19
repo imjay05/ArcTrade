@@ -380,9 +380,16 @@
 }
 
 @media (max-width: 900px) {
-  .signup-panel--right { display: none; }
-  .signup-mobile-brand { display: flex; }
-  .signup-panel--left { justify-content: center; padding: 36px 22px; }
+  .signup-panel--right { 
+    display: none; 
+  }
+  .signup-mobile-brand { 
+    display: flex; 
+  }
+  .signup-panel--left { 
+    justify-content: center; 
+    padding: 36px 22px; 
+  }
 }
 
 .sf-input-wrap input[type="password"]::-ms-reveal,
