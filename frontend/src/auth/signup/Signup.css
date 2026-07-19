@@ -402,4 +402,6 @@ input::-ms-reveal {
   display: none !important; 
 }
 
-input::-ms-clear { display: none !important; }
+input::-ms-clear { 
+  display: none !important; 
+}
