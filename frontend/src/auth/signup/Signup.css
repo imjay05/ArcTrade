@@ -394,6 +394,9 @@
 
 .sf-input-wrap input[type="password"]::-ms-reveal,
 .sf-input-wrap input[type="password"]::-ms-clear,
-.sf-input-wrap input[type="text"]::-ms-reveal { display: none; }
+.sf-input-wrap input[type="text"]::-ms-reveal { 
+  display: none; 
+}
+
 input::-ms-reveal { display: none !important; }
 input::-ms-clear { display: none !important; }
