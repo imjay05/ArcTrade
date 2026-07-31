@@ -12,7 +12,7 @@ const MyStocks = () => {
   return (
     <div className="my-stocks-card">
       <div className="my-stocks-header">
-        <h4>My Stocks</h4>
+        <h4>My Trades</h4>
         <span className="my-stocks-count">
           {holdingsLoading ? "…" : rows.length}
         </span>
