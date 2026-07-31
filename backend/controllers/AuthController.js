@@ -34,6 +34,7 @@ const signup = async (req, res) => {
         email: user.email,
         userId: user.userId,
         walletBalance: user.walletBalance,
+        customStocks: user.customStocks,
       },
     });
   } catch (err) {
@@ -79,6 +80,7 @@ const login = async (req, res) => {
         email: user.email,
         userId: user.userId,
         walletBalance: user.walletBalance,
+        customStocks: user.customStocks,
       },
     });
   } catch (err) {
@@ -100,6 +102,7 @@ const getMe = async (req, res) => {
       email: req.user.email,
       userId: req.user.userId,
       walletBalance: req.user.walletBalance,
+      customStocks: req.user.customStocks,
     },
   });
 };

@@ -1,14 +1,14 @@
-import React, { useMemo } from "react";
-import { stocksByDomain } from "../../data/Data";
+import React, { useMemo, useState } from "react";
+import { useStockUniverse } from "../../hooks/useStockUniverse";
 import { useStockPrices } from "../../hooks/useStockPrices";
 import WatchListItem from "./WatchListItem";
 import "./WatchList.css";
 
 const WatchList = () => {
-  const allSymbols = useMemo(() => Object.values(stocksByDomain).flat(), []);
+  const { allSymbols, customSymbolSet } = useStockUniverse();
   const { prices } = useStockPrices(allSymbols);
 
-  const [query, setQuery] = React.useState("");
+  const [query, setQuery] = useState("");
 
   const enrich = (sym) => {
     const live = prices[sym];
@@ -18,6 +18,7 @@ const WatchList = () => {
       percent: live ? `${live.percent >= 0 ? "+" : ""}${live.percent.toFixed(2)}%` : "—",
       isDown: live?.isDown ?? false,
       hasData: !!live,
+      isCustom: customSymbolSet.has(sym),
     };
   };
 
@@ -25,7 +26,7 @@ const WatchList = () => {
     const q = query.trim().toUpperCase();
     const base = q ? allSymbols.filter((s) => s.includes(q)) : [...allSymbols].sort();
     return base.map(enrich);
-  }, [query, allSymbols, prices]);
+  }, [query, allSymbols, prices, customSymbolSet]);
 
   return (
     <div className="watchlist-container">
@@ -37,8 +38,7 @@ const WatchList = () => {
           placeholder="Search NSE symbol…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          spellCheck={false}
-        />
+          spellCheck={false}/>
         {query && <button className="wl-search-clear" onClick={() => setQuery("")}>✕</button>}
       </div>
 

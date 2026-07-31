@@ -147,8 +147,33 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const addCustomStock = async (symbol) => {
+    const res = await axios.post(`${API}/api/watchlist/custom`, { symbol });
+    if (res.data.success) {
+      setUser((prev) => {
+        const updated = { ...prev, customStocks: res.data.customStocks };
+        saveSession(getStoredToken(), updated);
+        return updated;
+      });
+    }
+    return res.data;
+  };
+
+  const removeCustomStock = async (symbol) => {
+    const res = await axios.delete(`${API}/api/watchlist/custom/${encodeURIComponent(symbol)}`);
+    if (res.data.success) {
+      setUser((prev) => {
+        const updated = { ...prev, customStocks: res.data.customStocks };
+        saveSession(getStoredToken(), updated);
+        return updated;
+      });
+    }
+    return res.data;
+  };
+
   return (
-    <AuthContext.Provider value={{ user, loading, login, signup, logout, refreshUser }}>
+    <AuthContext.Provider
+      value={{ user, loading, login, signup, logout, refreshUser, addCustomStock, removeCustomStock }}>
       {children}
     </AuthContext.Provider>
   );

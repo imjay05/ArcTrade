@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
-import { stocksByDomain } from "../../data/Data";
+import { useStockUniverse } from "../../hooks/useStockUniverse";
 import { useStockPrices } from "../../hooks/useStockPrices";
 import "./DomainChart.css";
 
@@ -18,7 +18,7 @@ const DomainChart = () => {
       .catch(() => setHoldings([]));
   }, []);
 
-  const allSymbols = useMemo(() => Object.values(stocksByDomain).flat(), []);
+  const { stocksByDomain, allSymbols } = useStockUniverse();
   const { prices } = useStockPrices(allSymbols);
 
   const holdingMap = useMemo(() => {
@@ -68,7 +68,8 @@ const DomainChart = () => {
         hasHoldings: heldStocks.length > 0,
       };
     });
-  }, [holdingMap, prices]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [holdingMap, prices, stocksByDomain]);
 
   const maxAbsChange = useMemo(
     () => Math.max(...domainStats.map((d) => Math.abs(d.avgChangePct)), 0.01),

@@ -168,4 +168,4 @@ const getBulkQuotes = async (req, res) => {
 };
 
 
-module.exports = { getStockPrices, getBulkQuotes };
+module.exports = { getStockPrices, getBulkQuotes, fetchQuote, toYahooSymbol };

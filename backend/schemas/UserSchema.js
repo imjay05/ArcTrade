@@ -41,6 +41,24 @@ const UserSchema = new Schema(
       type: Boolean,
       default: true,
     },
+    customStocks: [
+      {
+        symbol: {
+          type: String,
+          required: true,
+          uppercase: true,
+          trim: true,
+        },
+        domain: {
+          type: String,
+          default: "Other",
+        },
+        addedAt: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );

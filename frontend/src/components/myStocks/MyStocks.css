@@ -1,0 +1,107 @@
+.my-stocks-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+
+.my-stocks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.my-stocks-header h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.my-stocks-count {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--bg-subtle);
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+.my-stocks-count.at-limit {
+  color: var(--brand-crimson);
+  background: var(--brand-crimson-light);
+}
+
+.my-stocks-add-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.my-stocks-add-row input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.my-stocks-add-row input:focus {
+  border-color: #16a34a;
+}
+
+.my-stocks-add-row button {
+  padding: 8px 16px;
+  background: #16a34a;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.my-stocks-add-row button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.my-stocks-limit-note {
+  font-size: 0.75rem;
+  color: var(--brand-crimson);
+  margin-bottom: 6px;
+}
+
+.my-stocks-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.my-stocks-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background: var(--bg-subtle);
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+.my-stocks-symbol {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.my-stocks-domain {
+  flex: 1;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+.my-stocks-remove {
+  color: var(--brand-crimson);
+  font-size: 0.8rem;
+  padding: 2px 6px;
+}

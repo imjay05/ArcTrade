@@ -5,6 +5,7 @@ import useHoldings from "../../hooks/useHoldings";
 import useLivePriceTick from "../../hooks/useLivePriceTick";
 import PnlBlock from "./PnlBlock";
 import DomainChart from "../domainChart/DomainChart";
+import MyStocks from "../myStocks/MyStocks";
 import "./Summary.css";
 
 const Summary = () => {
@@ -25,6 +26,9 @@ const Summary = () => {
     <div style={{ width: "100%", boxSizing: "border-box" }}>
 
       <h6 className="summary-greeting" style={{ color: C.textPrimary }}>Hi, {firstName}!</h6>
+      <hr className="summary-divider" />
+
+      <MyStocks />
       <hr className="summary-divider" />
 
       <p className="summary-section-label">Equity</p>
