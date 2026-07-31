@@ -5,7 +5,7 @@ import { useStockUniverse } from "../../hooks/useStockUniverse";
 import { useStockPrices } from "../../hooks/useStockPrices";
 import WatchListItem from "./WatchListItem";
 import "./WatchList.css";
-import "./WatchListAddStock.css";
+import "./Watchlistaddstock.css";
 
 const MAX_STOCKS = 7;
 
