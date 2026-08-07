@@ -258,7 +258,10 @@
 }
 
 .lf-alert--success { 
-  background: var(--green-light); color: var(--green); border: 1px solid #86efac; }
+  background: var(--green-light); 
+  color: var(--green); 
+  border: 1px solid #86efac; 
+}
 
 .lf-submit {
   width: 100%;
