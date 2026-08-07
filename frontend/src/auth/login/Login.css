@@ -239,9 +239,18 @@
   transition: color var(--t-fast); 
 }
 
-.lf-toggle-pwd:hover { color: var(--text); }
+.lf-toggle-pwd:hover { 
+  color: var(--text); 
+}
 
-.lf-alert { padding: 9px 13px; border-radius: var(--r-md); font-size: 0.84rem; font-weight: 500; line-height: 1.5; }
+.lf-alert { 
+  padding: 9px 13px; 
+  border-radius: var(--r-md); 
+  font-size: 0.84rem; 
+  font-weight: 500; 
+  line-height: 1.5; 
+}
+
 .lf-alert--error { background: var(--red-light); color: var(--red); border: 1px solid #fca5a5; }
 .lf-alert--success { background: var(--green-light); color: var(--green); border: 1px solid #86efac; }
 
