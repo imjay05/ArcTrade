@@ -222,7 +222,11 @@
   color: #c4c9d4; 
 }
 
-.lf-input-wrap input:focus { border-color: #16a34a; background: var(--white); box-shadow: 0 0 0 3px rgba(22,163,74,0.1); }
+.lf-input-wrap input:focus { 
+  border-color: #16a34a; 
+  background: var(--white); 
+  box-shadow: 0 0 0 3px rgba(22,163,74,0.1); 
+}
 
 .lf-toggle-pwd { position: absolute; right: 11px; color: #9ca3af; padding: 4px; display: flex; align-items: center; border-radius: 4px; transition: color var(--t-fast); }
 .lf-toggle-pwd:hover { color: var(--text); }
