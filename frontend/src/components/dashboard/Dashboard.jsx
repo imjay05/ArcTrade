@@ -7,6 +7,7 @@ import Orders from "../orders/Orders";
 import Summary from "../summary/Summary";
 import WatchList from "../watchList/WatchList";
 import { GeneralContextProvider } from "../generalContext/GeneralContext";
+import "./Dashboard.css";
 
 const Dashboard = () => {
   const location = useLocation();
