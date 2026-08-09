@@ -1,4 +1,8 @@
-.login-page { display: flex; min-height: 100vh; font-family: var(--font-body); }
+.login-page { 
+  display: flex; 
+  min-height: 100vh; 
+  font-family: var(--font-body); 
+}
 
 .login-panel--left {
   width: 42%;
