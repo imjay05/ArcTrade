@@ -124,7 +124,12 @@
   letter-spacing: -0.02em; 
 }
 
-.login-stat__label { font-size: 0.68rem; font-weight: 500; color: #475569; margin-top: 3px; }
+.login-stat__label { 
+  font-size: 0.68rem; 
+  font-weight: 500; 
+  color: #475569; 
+  margin-top: 3px; 
+}
 
 .login-panel__deco { position: absolute; bottom: 0; left: 0; width: 100%; height: 180px; pointer-events: none; }
 
