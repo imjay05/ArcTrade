@@ -291,7 +291,9 @@
   flex-shrink: 0;
   background: #fff;
   border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
   padding: 3px;
   box-shadow: 0 1px 6px rgba(0,0,0,0.3);
 }
