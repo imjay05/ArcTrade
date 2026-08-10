@@ -149,7 +149,12 @@
   padding: 44px 40px; 
 }
 
-.login-form-wrap { width: 100%; max-width: 400px; display: flex; flex-direction: column; }
+.login-form-wrap { 
+  width: 100%; 
+  max-width: 400px; 
+  display: flex; 
+  flex-direction: column; 
+}
 
 .login-mobile-brand { 
   display: none; 
