@@ -1,5 +1,5 @@
 import express from "express";
-import { getStockPrices, getBulkQuotes } from "../controllers/stockPrice.controller";
+import { getStockPrices, getBulkQuotes } from "../controllers/stockPrice.controller.js";
 
 const router = express.Router();
 
