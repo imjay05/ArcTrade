@@ -1,7 +1,6 @@
 import express from "express";
-
-const { createOrder, verifyPayment } = require("../controllers/payment.controller.js");
-const { protect } = require("../middleware/auth.middleware.js");
+import { createOrder, verifyPayment } from "../controllers/payment.controller.js";
+import { protect } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 

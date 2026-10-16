@@ -1,13 +1,11 @@
 import express from "express";
-
-const { getUniverse, addCustomStock, removeCustomStock } = require("../controllers/watchList.controller.js");
-const { protect } = require("../middleware/auth.middleware");
+import { getUniverse, addCustomStock, removeCustomStock } from "../controllers/watchList.controller.js";
+import { protect } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 
 router.get("/universe", getUniverse);
-router.post("/custom", protect, addCustomStock);
-router.delete("/custom/:symbol", protect, removeCustomStock);
-
+router.post("/", protect, addCustomStock);
+router.delete("/:symbol", protect, removeCustomStock);
 
 export default router;
