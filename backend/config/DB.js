@@ -1,13 +1,21 @@
+
 import mongoose from "mongoose";
 
 const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URL);
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (err) {
-    console.error("DB Connection Error:", err.message);
-    process.exit(1);
+  if (mongoose.connection.readyState === 1) {
+    return mongoose.connection;
   }
+
+  const mongoUrl = process.env.MONGO_URL;
+
+  if (!mongoUrl) {
+    throw new Error("MONGO_URL environment variable is missing");
+  }
+
+  const conn = await mongoose.connect(mongoUrl);
+
+  console.log(`MongoDB Connected: ${conn.connection.host}`);
+  return conn.connection;
 };
 
 export default connectDB;
