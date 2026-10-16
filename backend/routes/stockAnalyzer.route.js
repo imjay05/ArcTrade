@@ -1,8 +1,10 @@
-const express = require("express");
-const router = express.Router();
+import express from "express";
+
 const { getHoldingsByDomain } = require("../controllers/stockAnalyzer.controller.js");
 const { protect } = require("../middleware/auth.middleware.js");
 
+const router = express.Router();
+
 router.get("/", protect, getHoldingsByDomain);
 
-module.exports = router;
+export default router;

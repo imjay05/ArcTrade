@@ -1,8 +1,10 @@
-const express = require("express");
-const router = express.Router();
+import express from "express";
+
 const { getStockPrices, getBulkQuotes } = require("../controllers/stockPrice.controller.js");
 
+const router = express.Router();
 router.get("/", getStockPrices);
 router.get("/bulk", getBulkQuotes);
 
-module.exports = router;
+
+export default router;

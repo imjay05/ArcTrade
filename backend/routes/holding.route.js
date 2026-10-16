@@ -1,8 +1,8 @@
-const express = require("express");
-const router = express.Router();
+import express from "express";
 const { getAllHoldings } = require("../controllers/holding.controller.js");
 const { protect } = require("../middleware/auth.middleware.js");
 
+const router = express.Router();
 router.get("/", protect, getAllHoldings);
 
-module.exports = router;
+export default router;
