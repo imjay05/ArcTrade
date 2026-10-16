@@ -11,23 +11,27 @@ import stockAnalyzerRoutes from "./routes/stockAnalyzer.route.js";
 
 const app = express();
 
-app.use(cors({
-  origin: function (origin, callback) {
-    const allowed = [
-      "http://localhost:5173",
-      "https://arctrade-stocks.vercel.app",
-      process.env.FRONTEND_URL,
-    ].filter(Boolean);
-    if (!origin || allowed.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS: " + origin));
-    }
-  },
-  credentials: true,
-  allowedHeaders: ["Content-Type", "Authorization"],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-}));
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://arctrade-stocks.vercel.app",
+  process.env.FRONTEND_URL,
+].filter(Boolean);
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      console.error("Blocked by CORS:", origin);
+      return callback(new Error("Not allowed by CORS: " + origin));
+    },
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  })
+);
 
 
 app.use(express.json());
