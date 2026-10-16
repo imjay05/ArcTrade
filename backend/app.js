@@ -11,6 +11,7 @@ import stockAnalyzerRoutes from "./routes/stockAnalyzer.route.js";
 
 const app = express();
 
+
 const allowedOrigins = [
   "http://localhost:5173",
   "https://arctrade-stocks.vercel.app",
@@ -19,17 +20,10 @@ const allowedOrigins = [
 
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-
-      console.error("Blocked by CORS:", origin);
-      return callback(new Error("Not allowed by CORS: " + origin));
-    },
+    origin: allowedOrigins,
     credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
