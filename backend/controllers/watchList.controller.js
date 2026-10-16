@@ -1,6 +1,6 @@
 import { STOCK_UNIVERSE, ALL_SYMBOLS, isValidSymbol, getDomain } from "../data/StockUniverse.js";
 import { User } from "../model/user.model.js";
-import { fetchQuote, toYahooSymbol } from "./stockAnalyzer.controller.js";
+import { fetchQuote, toYahooSymbol } from "./stockPrice.controller.js";
 
 const MAX_CUSTOM_STOCKS = 7;
 
