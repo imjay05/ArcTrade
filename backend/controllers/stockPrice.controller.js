@@ -1,32 +1,29 @@
-const axios = require("axios");
+import axios from "axios";
 
 const priceCache = {};
 const CACHE_TTL = 15 * 1000;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-
-const toYahooSymbol = (sym) => {
+export const toYahooSymbol = (sym) => {
   const s = sym.trim().toUpperCase();
   if (s === "M&M" || s === "M%26M") return "M&M.NS";
   if (s === "L&T" || s === "L%26T" || s === "LT") return "LT.NS";
   if (s === "HUL") return "HINDUNILVR.NS";
-  if (s === "BAJAJ-AUTO") return "BAJAJ-AUTO.NS";                
+  if (s === "BAJAJ-AUTO") return "BAJAJ-AUTO.NS";
   if (s === "DLF") return "DLF.NS";
   if (s.endsWith(".NS") || s.endsWith(".BO")) return s;
   return `${s}.NS`;
 };
 
-
 const fromYahooSymbol = (yahooSym) => {
   if (yahooSym === "HINDUNILVR.NS") return "HUL";
-  if (yahooSym === "M&M.NS") return "M&M"; 
+  if (yahooSym === "M&M.NS") return "M&M";
   if (yahooSym === "DLF.NS") return "DLF";
   return yahooSym.replace(/\.(NS|BO)$/, "");
 };
 
-
-async function fetchQuote(yahooSymbol) {
+export async function fetchQuote(yahooSymbol) {
   const cleanSymbol = decodeURIComponent(yahooSymbol);
   const url = `https://query2.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(cleanSymbol)}?interval=1d&range=1d`;
 
@@ -63,8 +60,7 @@ async function fetchQuote(yahooSymbol) {
   }
 }
 
-
-const getStockPrices = async (req, res) => {
+export const getStockPrices = async (req, res) => {
   const { symbols } = req.query;
   if (!symbols)
     return res.status(400).json({ success: false, message: "symbols param required" });
@@ -110,8 +106,7 @@ const getStockPrices = async (req, res) => {
 const PARALLEL_SIZE = 8;
 const BATCH_DELAY = 300;
 
-
-const getBulkQuotes = async (req, res) => {
+export const getBulkQuotes = async (req, res) => {
   const { symbols } = req.query;
   if (!symbols)
     return res.status(400).json({ success: false, message: "symbols required" });
@@ -166,6 +161,3 @@ const getBulkQuotes = async (req, res) => {
 
   return res.status(200).json({ success: true, data: all });
 };
-
-
-module.exports = { getStockPrices, getBulkQuotes, fetchQuote, toYahooSymbol };

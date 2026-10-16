@@ -1,9 +1,10 @@
-const { getDomain } = require("../data/StockUniverse");
-const { HoldingsModel } = require("../model/index");
+import { getDomain } from "../data/StockUniverse.js";
+import { Holding } from "../model/holding.model.js";
 
-const getHoldingsByDomain = async (req, res) => {
+
+export const getHoldingsByDomain = async (req, res) => {
   try {
-    const holdings = await HoldingsModel.find({ userId: req.user.userId });
+    const holdings = await Holding.find({ userId: req.user.userId });
     const tagged = holdings.map((h) => ({
       name: h.name,
       qty: h.qty,
@@ -17,6 +18,3 @@ const getHoldingsByDomain = async (req, res) => {
     return res.status(500).json({ success: false, message: "Failed to fetch domain breakdown." });
   }
 };
-
-
-module.exports = { getHoldingsByDomain };

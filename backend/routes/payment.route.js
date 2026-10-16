@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { createOrder, verifyPayment } = require("../controllers/PaymentController");
-const { protect } = require("../middleware/AuthMiddleware");
+const { createOrder, verifyPayment } = require("../controllers/payment.controller.js");
+const { protect } = require("../middleware/auth.middleware.js");
 
 router.post("/create-order", protect, createOrder);
 router.post("/verify", protect, verifyPayment);

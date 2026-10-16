@@ -1,8 +1,9 @@
-const mongoose = require("mongoose");
-const { OrdersModel, UserModel, HoldingsModel } = require("../model/index");
+import mongoose from "mongoose";
+import { Order } from "../model/order.model.js";
+import { User } from "../model/user.model.js";
+import { Holding } from "../model/holding.model.js";
 
-
-const newOrder = async (req, res) => {
+export const newOrder = async (req, res) => {
   const session = await mongoose.startSession();
 
   try {
@@ -33,14 +34,14 @@ const newOrder = async (req, res) => {
       });
     }
 
-    const user = await UserModel.findOne({ userId });
+    const user = await User.findOne({ userId });
     if (!user) {
       return res.status(404).json({ success: false, message: "User not found." });
     }
 
     // SELL: check sufficient qty before opening transaction
     if (mode === "SELL") {
-      const existing = await HoldingsModel.findOne({ userId, name });
+      const existing = await Holding.findOne({ userId, name });
       if (!existing || existing.qty < orderQty) {
         return res.status(400).json({
           success: false,
@@ -63,7 +64,7 @@ const newOrder = async (req, res) => {
 
     await session.withTransaction(async () => {
       if (mode === "BUY" && orderPrice > 0) {
-        await UserModel.findOneAndUpdate(
+        await User.findOneAndUpdate(
           { userId },
           { $inc: { walletBalance: -totalCost } },
           { session }
@@ -71,14 +72,14 @@ const newOrder = async (req, res) => {
       }
 
       if (mode === "SELL" && orderPrice > 0) {
-        await UserModel.findOneAndUpdate(
+        await User.findOneAndUpdate(
           { userId },
           { $inc: { walletBalance: totalCost } },
           { session }
         );
       }
 
-      const order = new OrdersModel({
+      const order = new Order({
         userId,
         name,
         qty: orderQty,
@@ -93,13 +94,13 @@ const newOrder = async (req, res) => {
 
       // Always CNC/delivery-style — update Holdings
       if (orderPrice > 0) {
-        const existing = await HoldingsModel.findOne({ userId, name }).session(session);
+        const existing = await Holding.findOne({ userId, name }).session(session);
 
         if (mode === "BUY") {
           if (existing) {
             const newQty = existing.qty + orderQty;
             const newAvg = ((existing.avg * existing.qty) + (orderPrice * orderQty)) / newQty;
-            await HoldingsModel.findOneAndUpdate(
+            await Holding.findOneAndUpdate(
               { userId, name },
               {
                 qty: newQty,
@@ -110,7 +111,7 @@ const newOrder = async (req, res) => {
               { session }
             );
           } else {
-            await HoldingsModel.create(
+            await Holding.create(
               [{
                 userId, name,
                 qty: orderQty,
@@ -126,9 +127,9 @@ const newOrder = async (req, res) => {
         } else if (mode === "SELL") {
           const remainingQty = existing.qty - orderQty;
           if (remainingQty <= 0) {
-            await HoldingsModel.deleteOne({ userId, name }, { session });
+            await Holding.deleteOne({ userId, name }, { session });
           } else {
-            await HoldingsModel.findOneAndUpdate(
+            await Holding.findOneAndUpdate(
               { userId, name },
               {
                 qty: remainingQty,
@@ -157,14 +158,11 @@ const newOrder = async (req, res) => {
 };
 
 
-const getAllOrders = async (req, res) => {
+export const getAllOrders = async (req, res) => {
   try {
-    const orders = await OrdersModel.find({ userId: req.user.userId }).sort({ createdAt: -1 });
+    const orders = await Order.find({ userId: req.user.userId }).sort({ createdAt: -1 });
     return res.status(200).json({ success: true, data: orders });
   } catch (err) {
     return res.status(500).json({ success: false, message: "Failed to fetch orders." });
   }
 };
-
-
-module.exports = { newOrder, getAllOrders };

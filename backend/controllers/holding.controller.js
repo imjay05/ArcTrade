@@ -1,14 +1,11 @@
-const { HoldingsModel } = require("../model/index");
+import { Holding } from "../model/holding.model.js";
 
-const getAllHoldings = async (req, res) => {
+export const getAllHoldings = async (req, res) => {
   try {
-    const holdings = await HoldingsModel.find({ userId: req.user.userId });
+    const holdings = await Holding.find({ userId: req.user.userId });
     return res.status(200).json({ success: true, data: holdings });
   } catch (err) {
     console.error("Holdings fetch error:", err);
     return res.status(500).json({ success: false, message: "Failed to fetch holdings." });
   }
 };
-
-
-module.exports = { getAllHoldings };

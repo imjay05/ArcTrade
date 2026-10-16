@@ -1,16 +1,15 @@
-const { STOCK_UNIVERSE, ALL_SYMBOLS, isValidSymbol, getDomain } = require("../data/StockUniverse");
-const { UserModel } = require("../model/index");
-const { fetchQuote, toYahooSymbol } = require("./StockPricesController");
+import { STOCK_UNIVERSE, ALL_SYMBOLS, isValidSymbol, getDomain } from "../data/StockUniverse.js";
+import { User } from "../model/user.model.js";
+import { fetchQuote, toYahooSymbol } from "./stockAnalyzer.controller.js";
 
 const MAX_CUSTOM_STOCKS = 7;
 
-
-const getUniverse = async (req, res) => {
+export const getUniverse = async (req, res) => {
   return res.json({ success: true, universe: STOCK_UNIVERSE, allSymbols: ALL_SYMBOLS });
 };
 
 
-const addCustomStock = async (req, res) => {
+export const addCustomStock = async (req, res) => {
   try {
     let { symbol } = req.body;
 
@@ -26,7 +25,7 @@ const addCustomStock = async (req, res) => {
       });
     }
 
-    const user = await UserModel.findOne({ userId: req.user.userId });
+    const user = await User.findOne({ userId: req.user.userId });
     if (!user) {
       return res.status(404).json({ success: false, message: "User not found." });
     }
@@ -71,11 +70,11 @@ const addCustomStock = async (req, res) => {
 };
 
 
-const removeCustomStock = async (req, res) => {
+export const removeCustomStock = async (req, res) => {
   try {
     const symbol = req.params.symbol?.trim().toUpperCase();
 
-    const user = await UserModel.findOne({ userId: req.user.userId });
+    const user = await User.findOne({ userId: req.user.userId });
     if (!user) {
       return res.status(404).json({ success: false, message: "User not found." });
     }
@@ -99,6 +98,3 @@ const removeCustomStock = async (req, res) => {
     return res.status(500).json({ success: false, message: "Failed to remove stock." });
   }
 };
-
-
-module.exports = { getUniverse, addCustomStock, removeCustomStock };

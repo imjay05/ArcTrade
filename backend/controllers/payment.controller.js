@@ -1,7 +1,7 @@
-const Razorpay = require("razorpay");
-const crypto = require("crypto");
-const { PaymentModel, UserModel } = require("../model/index");
-
+import Razorpay from "razorpay";
+import crypto from "crypto";
+import { Payment } from "../model/payment.order.js";
+import { User } from "../model/user.model.js";
 
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
@@ -9,7 +9,7 @@ const razorpay = new Razorpay({
 });
 
 
-const createOrder = async (req, res) => {
+export const createOrder = async (req, res) => {
   try {
     const { amount } = req.body;
 
@@ -29,7 +29,7 @@ const createOrder = async (req, res) => {
 
     const order = await razorpay.orders.create(options);
 
-    await PaymentModel.create({
+    await Payment.create({
       userId: req.user.userId,
       razorpayOrderId: order.id,
       amount,
@@ -52,7 +52,7 @@ const createOrder = async (req, res) => {
 };
 
 
-const verifyPayment = async (req, res) => {
+export const verifyPayment = async (req, res) => {
   try {
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
 
@@ -66,7 +66,7 @@ const verifyPayment = async (req, res) => {
       return res.status(400).json({ success: false, message: "Payment verification failed. Invalid signature." });
     }
 
-    const payment = await PaymentModel.findOneAndUpdate(
+    const payment = await Payment.findOneAndUpdate(
       { razorpayOrderId: razorpay_order_id },
       {
         razorpayPaymentId: razorpay_payment_id,
@@ -80,7 +80,7 @@ const verifyPayment = async (req, res) => {
       return res.status(404).json({ success: false, message: "Payment record not found." });
     }
 
-    const user = await UserModel.findOneAndUpdate(
+    const user = await User.findOneAndUpdate(
       { userId: payment.userId },
       { $inc: { walletBalance: payment.amount } },
       { new: true }
@@ -96,6 +96,3 @@ const verifyPayment = async (req, res) => {
     return res.status(500).json({ success: false, message: "Payment verification failed." });
   }
 };
-
-
-module.exports = { createOrder, verifyPayment };

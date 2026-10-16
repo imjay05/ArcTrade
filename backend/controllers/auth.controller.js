@@ -1,5 +1,5 @@
-const jwt = require("jsonwebtoken");
-const { UserModel } = require("../model/index");
+import jwt from "jsonwebtoken";
+import { User } from "../model/user.model.js";
 
 
 const generateToken = (id) => {
@@ -9,11 +9,11 @@ const generateToken = (id) => {
 };
 
 
-const signup = async (req, res) => {
+export const signup = async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
-    const existing = await UserModel.findOne({ email });
+    const existing = await User.findOne({ email });
     if (existing) {
       return res.status(400).json({
         success: false,
@@ -21,7 +21,7 @@ const signup = async (req, res) => {
       });
     }
 
-    const user = await UserModel.create({ name, email, password });
+    const user = await User.create({ name, email, password });
     const token = generateToken(user._id);
 
     return res.status(201).json({
@@ -47,11 +47,11 @@ const signup = async (req, res) => {
 };
 
 
-const login = async (req, res) => {
+export const login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const user = await UserModel.findOne({ email }).select("+password");
+    const user = await User.findOne({ email }).select("+password");
 
     if (!user) {
       return res.status(401).json({
@@ -93,7 +93,7 @@ const login = async (req, res) => {
 };
 
 
-const getMe = async (req, res) => {
+export const getMe = async (req, res) => {
   return res.status(200).json({
     success: true,
     user: {
@@ -108,12 +108,9 @@ const getMe = async (req, res) => {
 };
 
 
-const logout = async (req, res) => {
+export const logout = async (req, res) => {
   return res.status(200).json({
     success: true,
     message: "Logged out successfully.",
   });
 };
-
-
-module.exports = { signup, login, getMe, logout };
